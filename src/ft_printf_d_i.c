@@ -32,19 +32,19 @@ static char *ft_uitoa(unsigned int number)
     return(str);
 }
 
-int ft_print_udecimal(unsigned int value)
+int	ft_print_udecimal(unsigned int value)
 {
-    char    *str;
-    int     printed;
+	int		printed;
+	char	*str;
 
-    printed = 0;
-    if(value == 0)
-        printed += write(1, "0", 1);
-    else
-    {
-        str = ft_uitoa(value);
-        printed += ft_print_string(str);
-        free(str);
-    }
-    return (printed);
+	printed = 0;
+	if (value == 0)
+		printed += write(1, "0", 1);
+	else
+	{
+		str = ft_uitoa(value);
+		printed += ft_print_string(str);
+		free(str);
+	}
+	return (printed);
 }

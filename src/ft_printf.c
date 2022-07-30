@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-static int  ft_format(va_list arg, const char *format)
+static int	ft_format(va_list arg, const char *format)
 {
 	int	printed;
 
@@ -22,21 +22,24 @@ static int  ft_format(va_list arg, const char *format)
 	return (printed);
 }
 
-int ft_printf(const char *format, ...)
+int	ft_printf(const char *format, ...)
 {
-    va_list args;
-    int     printed;
+	va_list	args;
+	int		printed;
 
-    va_start(args, format);
-    printed = 0;
-    while(*format)
-    {
-        if(*format == '%')
-        {
-            printed += ft_format(args, (format + 1));
-            format++;
-        }
-        va_end(args);
-    }
-	return(printed);
+	va_start(args, format);
+	printed = 0;
+	while (*format)
+	{
+		if (*format == '%')
+		{
+			printed += ft_format(args, (format + 1));
+			format++;
+		}
+		else
+			printed += ft_print_char(*format);
+		format++;
+	}
+	va_end(args);
+	return (printed);
 }

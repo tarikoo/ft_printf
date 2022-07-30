@@ -1,21 +1,21 @@
 #include "ft_printf.h"
-
-static int  ft_pointer_len(unsigned long number)
+static int	ft_pointer_len(unsigned	long number)
 {
-    int count;
+	int	count;
 
-    count = 0;
-    if(number == 0)
-        return(1);
-    while (number != 0)
-    {
-        number /= 16;
-        count++;
-    }
-    return(count);
+	count = 0;
+	if (number == 0)
+		return (1);
+	while (number != 0)
+	{
+		number /= 16;
+		count++;
+	}
+	return (count);
 }
 
-static int  ft_print_ptr(unsigned long long value)
+//hexadecimal olrak stdout olarak yaziyoruz (write(1, value, 1))
+static int	ft_print_ptr(unsigned long long value)
 {
 	if (value >= 16)
 	{

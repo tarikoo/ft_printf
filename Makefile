@@ -1,3 +1,4 @@
+
 NAME	:= libftprintf.a
 SRCS	:= src
 SRC		:= $(wildcard $(SRCS)/*.c)
